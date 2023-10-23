@@ -34,6 +34,6 @@ jobs:
       run: source venv/bin/activate
     - name: delpoy
       run: |
-         nohup python3 /home/ubuntu/actions-runner/_work/sampleApp/sampleApp/sample.py > app.log 2>&1 &
+         coverage run /home/ubuntu/actions-runner/_work/sampleApp/sampleApp/sample.py  &
    
  
