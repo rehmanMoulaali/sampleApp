@@ -34,6 +34,7 @@ jobs:
       run: source venv/bin/activate
     - name: delpoy
       run: |
+         export RUNNER_TRACKING_ID=""
          coverage run /home/ubuntu/actions-runner/_work/sampleApp/sampleApp/sample.py  &
    
  
