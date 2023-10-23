@@ -26,12 +26,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
+    - name: change directories
+      run: cd /home/ubuntu/actions-runner/_work/sampleApp/sampleApp
     - name: setup envoiremnet
-      run: |
-         python3 -m venv venv
-         source venv/bin/activate
-
+      run: python3 -m venv venv
+    - name: activate envoiremnet
+      run: source venv/bin/activate
     - name: delpoy
       run: |
          nohup python3 /home/ubuntu/actions-runner/_work/sampleApp/sampleApp/sample.py > app.log 2>&1 &
