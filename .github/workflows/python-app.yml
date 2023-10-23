@@ -28,6 +28,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: deploy the app
-      run: cd /home/ubuntu/actions-runner/_work/sampleApp/sampleApp & gunicorn -b 0.0.0.0:8000 sample:app
+      run: cd /home/ubuntu/actions-runner/_work/sampleApp/sampleApp & gunicorn -b 0.0.0.0:8000 sample:app &
    
  
