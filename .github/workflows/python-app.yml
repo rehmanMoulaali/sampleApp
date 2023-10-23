@@ -27,7 +27,11 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: deploy the app
-      run:  source venv/bin/activate & cd /home/ubuntu/actions-runner/_work/sampleApp/sampleApp & gunicorn -b 0.0.0.0:8000 sample:app &
+    - name: setup envoiremnet
+      run:  source venv/bin/activate
+
+    - name: delpoy
+      run: |
+         nohup python3 /home/ubuntu/actions-runner/_work/sampleApp/sampleApp/sample.py > app.log 2>&1 &
    
  
